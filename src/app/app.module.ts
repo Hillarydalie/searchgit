@@ -4,11 +4,13 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { TafutaFormComponent } from './tafuta-form/tafuta-form.component';
+import { TafutanavComponent } from './tafutanav/tafutanav.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    TafutaFormComponent
+    TafutaFormComponent,
+    TafutanavComponent
   ],
   imports: [
     BrowserModule,
