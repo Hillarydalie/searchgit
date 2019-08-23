@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter} from '@angular/core';
 
 @Component({
   selector: 'app-tafuta-form',
@@ -7,9 +7,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TafutaFormComponent implements OnInit {
 
-  constructor() { }
+    @Output() emitSearch = new EventEmitter<any>()
 
-  ngOnInit() {
-  }
+    gitSearch:string;
+    
+    constructor() { }
+
+      search(){
+          this.emitSearch.emit(this.gitSearch)
+      }
+
+    ngOnInit() {
+    }
 
 }
