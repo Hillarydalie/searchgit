@@ -1,2 +1,125 @@
 /*Insert bootstrap cdn*/
 @import '~bootstrap/dist/css/bootstrap.min.css';
+@import url('https://fonts.googleapis.com/css?family=Livvic|Raleway&display=swap');
+
+/*
+font-family: 'Livvic', sans-serif;
+font-family: 'Raleway', sans-serif;
+*/
+
+h2 {
+    font-family: 'Livvic', sans-serif;
+    font-weight: bold;
+}
+
+h3.normal {
+    font-family: 'Raleway', sans-serif;
+    font-weight: bold;
+}
+
+.result h3 {
+    margin-bottom: 8%;
+    font-family: 'Raleway', sans-serif;
+    font-weight: bold;
+}
+
+h4 {
+    font-family: 'Raleway', sans-serif;
+        text-underline-position: under;
+    text-decoration: underline;
+}
+
+p {
+    font-family: 'Livvic', sans-serif;
+}
+
+a {
+    color: #007bff;
+    text-decoration: none;
+    background-color: transparent;
+    font-size: large;
+    font-family: 'Raleway', sans-serif;
+}
+
+.navbar {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    padding: .5rem 1rem;
+}
+
+.bg-dark {
+    background-color: #485d73!important;
+}
+
+.rounded-circle {
+    border-radius: 50% 0px !important;
+}
+
+.card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: rgba(0,0,0,0); 
+    background-clip: border-box;
+    border: 1px solid rgba(0,0,0,0); 
+    border-radius: .25rem;
+}
+
+p#tag {
+    margin-top: 75%;
+    font-size: medium;
+    color: white;
+}
+
+div#logo {
+    background-image: url("./assets/images/logo.png");
+    background-size: cover;
+    width: auto;
+    height: auto;
+}
+
+div#repolatest {
+    margin-bottom: 5%;
+}
+
+i {
+  border: solid red;
+  border-width: 0 3px 3px 0;
+  display: inline-block;
+  padding: 3px;
+}
+
+.down {
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+}
+
+.navbar {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 5px 5px;
+    color: #f0b245;
+}
+
+a.navbar:hover {
+    color: antiquewhite;
+}
+
+.navbar-brand {
+    display: flex;
+    justify-content: flex-start;
+    padding-top: .3125rem;
+    padding-bottom: .3125rem;
+    margin-right: 79%;
+    font-size: 1.25rem;
+    line-height: inherit;
+    white-space: nowrap;
+}

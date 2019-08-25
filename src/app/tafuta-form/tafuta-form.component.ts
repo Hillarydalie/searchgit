@@ -11,6 +11,7 @@ export class TafutaFormComponent implements OnInit {
 
     gitSearch:string;
     
+    
     constructor() { }
 
     search(){

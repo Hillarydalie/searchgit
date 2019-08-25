@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  TafutaAPI: "ce358d07b2de20914b2d0e42067cf23b92000d83"
+  TafutaAPI: "4d50e2179b929b498e1e24104382e062ff52e259"
 };
 
 /*

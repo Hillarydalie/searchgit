@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {TafutaHttpService} from '../services/tafuta-http.service';
 import {Gitsearch} from '../gitsearch';
+import { Repo } from '../repositories';
  
 @Component({
   selector: 'app-tafuta',
@@ -11,6 +12,8 @@ import {Gitsearch} from '../gitsearch';
 export class TafutaComponent implements OnInit {
 
     gitsearches:Gitsearch[];
+    repo: Repo[];
+
     constructor(public tafutaHttpService:TafutaHttpService) { }
 
     ngOnInit() {
@@ -29,4 +32,16 @@ export class TafutaComponent implements OnInit {
         )
     }
 
+    searchRepository(searchWord){
+        this.tafutaHttpService.searchingRepo(searchWord).then(
+            ()=>{
+                this.repo=this.tafutaHttpService.repo;
+                // console.log(this.gitsearches)
+            },
+            (error)=>{
+                console.log(error)
+            }
+        )
+    }
 }
+

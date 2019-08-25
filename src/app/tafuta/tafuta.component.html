@@ -1,19 +1,95 @@
-<div>
-    <app-tafuta-form (emitSearch)="searchGithub($event)" ></app-tafuta-form>
-    <div class="card-columns">
-        <div *ngFor="let gitsearch of gitsearches">
-            <div class="card">
-                <img src="{{gitsearch.avatar_url}}" class="card-img rounded-circle ">
-                <p> {{gitsearch.login}} </p>
-                <p> {{gitsearch.name}} </p>
-                <p> {{gitsearch.bio}} </p>
-                <p> {{gitsearch.location}} </p>
-                <p>{{gitsearch.followers}}</p>
-                <p>{{gitsearch.following}}</p>
-                <p>{{gitsearch.created_at}}</p>
-                <p>{{gitsearch.email}}</p>
-                <p>{{gitsearch.public_repos}}</p>
+<div class="jumbotron">
+    <div class="row">
+        <div class="col-md-4 text-center" id="logo">
+            <p id="tag">
+                Tafuta the github search utility for finding github accounts and repositories.
+            </p>
+        </div>
+        <div class="col-md-4">
+            <div class="card" id="avatar">
+                <img src="https://avatars3.githubusercontent.com/u/7794505?v=4" class="card-img rounded-circle ">
+            </div>
+        </div>
+        <div class="col-md-4" id="details">
+            <h3 class="normal">Hillarydalie</h3>
+            <h3 class="normal">
+                <a href="#">hidalie@gmail.com</a>
+            </h3>
+            <div class="row">
+                <div class="col">
+                    <h6>FOLLOWERS</h6>
+                    <p>12</p>
+                </div>
+                <div class="col">
+                    <h6>FOLLOWING</h6>
+                    <p>20</p>
+                </div>
+                <div class="col">
+                    <h6>REPOSITORIES</h6>
+                    <p>31</p>
+                </div>
+                <div class="col-md-12">
+                    <p>Life is hard, God is good.Believer | Adrenaline Junkie.</p>
+                </div>
+                <div class="col-md-12" id="repolatest">
+                    <a href="https://github.com/Hillarydalie">See More</a>
+                </div>
+                <div class="col-md-12">
+                    <h6>LATEST PROJECT</h6>
+                    <a href="https://github.com/Hillarydalie/semasema">Sema Web App</a>
+                    <p>This a sample application where users can create quotes they have encountered and have,in order to have those quotes voted on whether they are terrible, just there or are inspirational.</p>
             </div>
         </div>
     </div>
 </div>
+
+<div class="result">
+    <app-tafuta-form (emitSearch)="searchGithub($event)" (emitSearch)="searchRepository($event)" ></app-tafuta-form>
+    <div class="main-card">
+        <div *ngFor="let gitsearch of gitsearches">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="card" id="avatar">
+                        <img src="{{gitsearch.avatar_url}}" class="card-img rounded-circle ">
+                    </div>
+                </div>
+                <div class="col-md-4" id="details">
+                    <h3>{{gitsearch.login}}</h3>
+                    <h3>
+                        <a href="#">{{gitsearch.email}}</a>
+                    </h3>
+                    <div class="row">
+                        <div class="col">
+                            <h6>FOLLOWERS</h6>
+                            <p>{{gitsearch.followers}}</p>
+                        </div>
+                        <div class="col">
+                            <h6>FOLLOWING</h6>
+                            <p>{{gitsearch.following}}</p>
+                        </div>
+                        <div class="col">
+                            <h5>REPOSITORIES</h5>
+                            <p>{{gitsearch.public_repos}}</p>
+                        </div>
+                        <div class="col-md-12">
+                            <p>{{gitsearch.bio}}</p>
+                        </div>
+                        <div class="col-md-12">
+                            <h4>Ongoing Projects</h4>
+                            <a href="{{gitsearch.html_url}}">See More</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<div *ngFor="let repo of repos">
+    <p>{{repo.name}}</p>
+    <p>{{repo.html_url}}</p>
+    <p>{{repo.description}}</p>
+</div>
+
