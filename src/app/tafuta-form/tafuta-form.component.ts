@@ -13,9 +13,9 @@ export class TafutaFormComponent implements OnInit {
     
     constructor() { }
 
-      search(){
-          this.emitSearch.emit(this.gitSearch)
-      }
+    search(){
+        this.emitSearch.emit(this.gitSearch)
+    }
 
     ngOnInit() {
     }
