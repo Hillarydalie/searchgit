@@ -13,7 +13,7 @@ export class TafutaHttpService {
     repo: Repo[]=[];    
 
     constructor(private http:HttpClient) { 
-        // this.repo = new Repo('', '', '');
+       
     }
 
     searchingGits(gitSearch:string) {
@@ -75,27 +75,4 @@ export class TafutaHttpService {
         })
         return promise;
     }
-
-  //   getRepos(gitsearch) {
-
-  //   interface ApiResponse {
-  //     name: string;
-  //     html_url: string;
-  //     description: string;
-  //   }
-
-  //   // let searchEnding = "https://api.github.com/users/"+gitSearch+"?access_token="+environment.TafutaAPI;
-  //   const promise = new Promise(((resolve, reject) => {
-  //     this.http.get<ApiResponse>('https://api.github.com/users/' + this.gitsearches + '/repos?access_token=' + this.apiKey )
-  //       .toPromise()
-  //       .then(res => {
-  //           console.log();
-  //         this.repo = res;
-  //   }, error => {
-
-  //     reject(error);
-  //   });
-  // }));
-  //   return promise;
-  // }
 }

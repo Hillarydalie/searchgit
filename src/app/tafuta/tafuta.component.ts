@@ -17,14 +17,13 @@ export class TafutaComponent implements OnInit {
     constructor(public tafutaHttpService:TafutaHttpService) { }
 
     ngOnInit() {
-        // this.searchGithub(" ");
+       
     }
 
     searchGithub(searchWord){
         this.tafutaHttpService.searchingGits(searchWord).then(
             ()=>{
                 this.gitsearches=this.tafutaHttpService.gitsearches;
-                // console.log(this.gitsearches)
             },
             (error)=>{
                 console.log(error)
@@ -36,7 +35,6 @@ export class TafutaComponent implements OnInit {
         this.tafutaHttpService.searchingRepo(searchWord).then(
             ()=>{
                 this.repo=this.tafutaHttpService.repo;
-                // console.log(this.gitsearches)
             },
             (error)=>{
                 console.log(error)
