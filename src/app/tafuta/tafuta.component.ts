@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {TafutaHttpService} from '../services/tafuta-http.service';
-import {Gitsearch} from '../gitsearch';
+import {Gitsearch} from '../users';
 import { Repo } from '../repositories';
  
 @Component({
