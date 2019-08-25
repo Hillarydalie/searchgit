@@ -2,9 +2,37 @@
     <div class="card">
         <div class="card-body">
             <form class="form-inline">
-                <input type="text" class="form-control mr-8" placeholder="Search Here" name="gitSearch" [(ngModel)]="gitSearch" >
-                <button type="submit" class="btn btn-light" (click)="searchButton()">Search</button>
+                <input type="text" class="form-control mr-8" placeholder="Search Here" name="gitSearch"[(ngModel)]="gitSearch">
+                <button type="submit" class="btn btn-light" (click)="search()">Search</button>
             </form>
-        </div>
+        </div>      
     </div>
 </div>
+
+<!-- import { BrowserModule } from '@angular/platform-browser';
+import { NgModule } from '@angular/core';
+import {FormsModule} from '@angular/forms';
+
+import { AppRoutingModule } from './app-routing.module';
+import { AppComponent } from './app.component';
+import {HttpClientModule} from '@angular/common/http';
+import { TafutaFormComponent } from './tafuta-form/tafuta-form.component';
+import { TafutanavComponent } from './tafutanav/tafutanav.component';
+import { TafutaComponent } from './tafuta/tafuta.component';
+import { NotFoundComponent } from './not-found/not-found.component';
+
+@NgModule({
+  declarations: [
+    AppComponent,
+    TafutaFormComponent,
+    TafutanavComponent,
+    TafutaComponent,
+    NotFoundComponent
+  ],
+  imports: [
+    AppRoutingModule,
+    FormsModule,
+    HttpClientModule
+  ],
+})
+export class AModule { } -->

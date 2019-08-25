@@ -1,8 +1,19 @@
 <div>
-    <app-tafuta-form ></app-tafuta-form>
+    <app-tafuta-form (emitSearch)="searchGithub($event)" ></app-tafuta-form>
     <div class="card-columns">
-        <div class="card">
-            <img src="" class="card-img"> 
+        <div *ngFor="let gitsearch of gitsearches">
+            <div class="card">
+                <img src="{{gitsearch.avatar_url}}" class="card-img rounded-circle ">
+                <p> {{gitsearch.login}} </p>
+                <p> {{gitsearch.name}} </p>
+                <p> {{gitsearch.bio}} </p>
+                <p> {{gitsearch.location}} </p>
+                <p>{{gitsearch.followers}}</p>
+                <p>{{gitsearch.following}}</p>
+                <p>{{gitsearch.created_at}}</p>
+                <p>{{gitsearch.email}}</p>
+                <p>{{gitsearch.public_repos}}</p>
+            </div>
         </div>
     </div>
 </div>
