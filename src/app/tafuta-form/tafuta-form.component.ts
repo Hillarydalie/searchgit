@@ -1,4 +1,4 @@
-import { Component, OnInit, Output, EventEmitter} from '@angular/core';
+  import { Component, OnInit, Output, EventEmitter} from '@angular/core';
 
 @Component({
   selector: 'app-tafuta-form',
@@ -20,6 +20,6 @@ export class TafutaFormComponent implements OnInit {
     }
 
     ngOnInit() {
-    }
+    }  
 
 }

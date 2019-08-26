@@ -21,7 +21,7 @@ export class TafutaHttpService {
             login:string;
             html_url:string; 
             avatar_url:string;
-            bio:any;
+            bio:any;    
             name:any;
             location:any;
             followers: any;
@@ -40,6 +40,7 @@ export class TafutaHttpService {
             this.http.get<Hillary>(searchEnding).toPromise().then(
                 (results)=>{
                     this.gitsearches.push(results);
+                    console.log(results);
                     resolve()
                 },
                 (error)=>{
@@ -52,10 +53,8 @@ export class TafutaHttpService {
     }
 
     searchingRepo(gitRepo:string) {
-        interface ApiKey {
-            name:string;
-            html_url:string;
-            description:string;
+        interface ReposInterface {
+            items: any;
         }
 
         let searchEndpoint = "https://api.github.com/search/repositories?q="+gitRepo+"&perpage="+10+"&sort=forks&order=asc?access_token="+environment.TafutaAPI;
@@ -63,9 +62,20 @@ export class TafutaHttpService {
 
         let promise = new Promise((resolve,reject)=>{
             this.gitrepos = [];
-            this.http.get<ApiKey>(searchEndpoint).toPromise().then(
+            this.http.get<ReposInterface>(searchEndpoint).toPromise().then(
                 (results)=>{
-                    this.gitrepos.push(results);
+                    console.log(results);
+                    for(let i=0; i<results.items.length;i++){
+                        let repo = new Gitrepo(
+                            results.items[i]["name"],
+                            results.items[i]["description"],
+                            results.items[i]["url"],
+                            results.items[i]["created_at"],
+                            results.items[i]["language"],
+                            )
+                        this.gitrepos.push(repo);
+                    }
+                    console.log(this.gitrepos);
                     resolve()
                 },
                 (error)=>{

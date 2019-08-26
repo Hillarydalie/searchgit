@@ -10,6 +10,7 @@ import { TafutanavComponent } from './tafutanav/tafutanav.component';
 import { TafutaComponent } from './tafuta/tafuta.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { TafutaRepoComponent } from './tafuta-repo/tafuta-repo.component';
+import { HoverDirective } from './hover.directive';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { TafutaRepoComponent } from './tafuta-repo/tafuta-repo.component';
     TafutanavComponent,
     TafutaComponent,
     NotFoundComponent,
-    TafutaRepoComponent
+    TafutaRepoComponent,
+    HoverDirective
   ],
   imports: [
     BrowserModule,

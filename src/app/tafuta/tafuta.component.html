@@ -86,9 +86,25 @@
         </div>
     </div>
 </div>
-
-<div *ngFor="let gitrepo of gitrepos">
-    <p>{{gitrepo.name}}</p>
-    <p>{{gitrepo.html_url}}</p>
-    <p>{{gitrepo.description}}</p>
-</div>
+<div class="container-full">
+    <div class="mainrepo">
+    <app-tafuta-repo (emitRepo)="searchRepository($event)"></app-tafuta-repo>
+    <div *ngFor="let gitrepo of gitrepos">
+        <div class="row">
+            <div class="col-md-3">
+                <h4>{{gitrepo.name}}</h4>
+                <p>
+                    <a href="">{{gitrepo.url}}</a>
+                </p>
+                <div class="col-md-3">
+                    <p>{{gitrepo.description}}</p>
+                </div>
+                <div class="col-md-3">
+                    <p>{{gitrepo.created_at}}</p>
+                </div>
+                <div class="col-md-3">
+                    <p>{{gitrepo.language}}</p>
+                </div>
+            </div>
+        </div>        
+    </div>

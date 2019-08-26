@@ -1,6 +1,13 @@
 export class Gitrepo {
-   public name: string;
-   public html_url: string;
-   public description: string;
+
+   constructor( 
+       public name: string, 
+       public description: string, 
+       public url: string, 
+       public created_at: string,
+       public language:string
+       ){
+
+   }
    
 }
