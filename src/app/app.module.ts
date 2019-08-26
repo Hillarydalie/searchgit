@@ -11,6 +11,7 @@ import { TafutaComponent } from './tafuta/tafuta.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { TafutaRepoComponent } from './tafuta-repo/tafuta-repo.component';
 import { HoverDirective } from './hover.directive';
+import { DatecountPipe } from './datecount.pipe';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { HoverDirective } from './hover.directive';
     TafutaComponent,
     NotFoundComponent,
     TafutaRepoComponent,
-    HoverDirective
+    HoverDirective,
+    DatecountPipe
   ],
   imports: [
     BrowserModule,
