@@ -33,7 +33,8 @@ export class TafutaHttpService {
         }
 
         let searchEnding = "https://api.github.com/users/"+gitSearch+"?access_token="+environment.TafutaAPI;
-        console.log(searchEnding);
+        searchEnding;
+
         let promise = new Promise((resolve,reject)=>{
             this.gitsearches = [];
             this.http.get<Hillary>(searchEnding).toPromise().then(
@@ -58,13 +59,13 @@ export class TafutaHttpService {
             description: string;
         }
 
-        let searchEnding = "https://api.github.com/users/"+gitSearch+"/repos?access_token="+environment.TafutaAPI;
+        let searchEndpoint = "https://api.github.com/search/repositories?q="+gitSearch+"&perpage="+5+"&sort=forks&order=asc?access_token="+environment.TafutaAPI;
         let promise = new Promise((resolve,reject)=>{
             this.repo = [];
-            this.http.get<ApiKey>(searchEnding).toPromise().then(
+            this.http.get<ApiKey>(searchEndpoint).toPromise().then(
                 (results)=>{
                     this.repo.push(results);
-   
+                    console.log(results);
                     resolve()
                 },
                 (error)=>{

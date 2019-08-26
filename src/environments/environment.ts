@@ -3,7 +3,7 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false,
+  production: false,    
   TafutaAPI: "4d50e2179b929b498e1e24104382e062ff52e259"
 };
 

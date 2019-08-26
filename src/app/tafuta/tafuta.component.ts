@@ -12,7 +12,7 @@ import { Repo } from '../repositories';
 export class TafutaComponent implements OnInit {
 
     gitsearches:Gitsearch[];
-    repo: Repo[];
+    gitRepo: GitRepo[];
 
     constructor(public tafutaHttpService:TafutaHttpService) { }
 
@@ -31,10 +31,10 @@ export class TafutaComponent implements OnInit {
         )
     }
 
-    searchRepository(searchWord){
-        this.tafutaHttpService.searchingRepo(searchWord).then(
+    searchRepository(searchRepo){
+        this.tafutaHttpService.searchingRepo(searchRepo).then(
             ()=>{
-                this.repo=this.tafutaHttpService.repo;
+                this.gitRepo=this.tafutaHttpService.gitRepo;
             },
             (error)=>{
                 console.log(error)

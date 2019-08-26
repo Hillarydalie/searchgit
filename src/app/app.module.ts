@@ -9,6 +9,7 @@ import { TafutaFormComponent } from './tafuta-form/tafuta-form.component';
 import { TafutanavComponent } from './tafutanav/tafutanav.component';
 import { TafutaComponent } from './tafuta/tafuta.component';
 import { NotFoundComponent } from './not-found/not-found.component';
+import { TafutaRepoComponent } from './tafuta-repo/tafuta-repo.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { NotFoundComponent } from './not-found/not-found.component';
     TafutaFormComponent,
     TafutanavComponent,
     TafutaComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    TafutaRepoComponent
   ],
   imports: [
     BrowserModule,

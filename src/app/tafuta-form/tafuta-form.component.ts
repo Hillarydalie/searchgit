@@ -8,14 +8,19 @@ import { Component, OnInit, Output, EventEmitter} from '@angular/core';
 export class TafutaFormComponent implements OnInit {
 
     @Output() emitSearch = new EventEmitter<any>()
+    @Output() emitRepo = new EventEmitter<any>()
 
     gitSearch:string;
-    
+    gitRepo:string
     
     constructor() { }
 
     search(){
         this.emitSearch.emit(this.gitSearch)
+    }
+
+    searchDevRepo(){
+        this.emitRepo.emit(this.gitRepo)
     }
 
     ngOnInit() {

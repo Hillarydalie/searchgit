@@ -44,7 +44,8 @@
 </div>
 
 <div class="result">
-    <app-tafuta-form (emitSearch)="searchGithub($event)" (emitSearch)="searchRepository($event)" ></app-tafuta-form>
+    <app-tafuta-form (emitSearch)="searchGithub($event)"></app-tafuta-form>
+    <app-tafuta-form (emitRepo)="searchRepository($event)"></app-tafuta-form>
     <div class="main-card">
         <div *ngFor="let gitsearch of gitsearches">
             <div class="row">
