@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {environment} from '../../environments/environment';
 import {Gitsearch} from '../users';
-import { Repo } from '../repositories';
+import { Gitrepo } from '../repositories';
 
 @Injectable({
   providedIn: 'root'
@@ -10,7 +10,7 @@ import { Repo } from '../repositories';
 export class TafutaHttpService {
 
     gitsearches:Gitsearch[]=[];
-    repo: Repo[]=[];    
+    gitrepos: Gitrepo[]=[];    
 
     constructor(private http:HttpClient) { 
        
@@ -40,7 +40,6 @@ export class TafutaHttpService {
             this.http.get<Hillary>(searchEnding).toPromise().then(
                 (results)=>{
                     this.gitsearches.push(results);
-   
                     resolve()
                 },
                 (error)=>{
@@ -52,20 +51,21 @@ export class TafutaHttpService {
         return promise;
     }
 
-    searchingRepo(gitSearch:string) {
+    searchingRepo(gitRepo:string) {
         interface ApiKey {
-            name: string;
-            html_url: string;
-            description: string;
+            name:string;
+            html_url:string;
+            description:string;
         }
 
-        let searchEndpoint = "https://api.github.com/search/repositories?q="+gitSearch+"&perpage="+5+"&sort=forks&order=asc?access_token="+environment.TafutaAPI;
+        let searchEndpoint = "https://api.github.com/search/repositories?q="+gitRepo+"&perpage="+10+"&sort=forks&order=asc?access_token="+environment.TafutaAPI;
+        searchEndpoint;
+
         let promise = new Promise((resolve,reject)=>{
-            this.repo = [];
+            this.gitrepos = [];
             this.http.get<ApiKey>(searchEndpoint).toPromise().then(
                 (results)=>{
-                    this.repo.push(results);
-                    console.log(results);
+                    this.gitrepos.push(results);
                     resolve()
                 },
                 (error)=>{

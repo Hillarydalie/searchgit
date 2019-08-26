@@ -1,1 +1,15 @@
-<p>tafuta-repo works!</p>
+<div class="contanier">
+    <div style="margin: 20px">
+        <div class="card">
+            <div class="card-header text-center">
+                <h2>Search Repo Here!</h2><p id="arrow"><i class="down"></i></p>
+            </div>
+            <div class="card-body" id="formbody">
+                <form class="form-inline justify-content-center">
+                    <input type="text" class="form-control mr-8" placeholder="Search Repo Here" name="gitRepo"[(ngModel)]="gitRepo" required>
+                    <button type="submit" class="btn btn-light" (click)="searchDevRepo()">Search</button>
+                </form>
+            </div>      
+        </div>
+    </div>
+</div>

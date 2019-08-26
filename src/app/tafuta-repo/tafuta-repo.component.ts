@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output,EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-tafuta-repo',
@@ -7,7 +7,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TafutaRepoComponent implements OnInit {
 
+     @Output() emitRepo = new EventEmitter<any>()
+
+    gitRepo:string
+
+
+
   constructor() { }
+
+  searchDevRepo(){
+        this.emitRepo.emit(this.gitRepo)
+    }
 
   ngOnInit() {
   }

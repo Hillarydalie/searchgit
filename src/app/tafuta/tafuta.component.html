@@ -45,7 +45,6 @@
 
 <div class="result">
     <app-tafuta-form (emitSearch)="searchGithub($event)"></app-tafuta-form>
-    <app-tafuta-form (emitRepo)="searchRepository($event)"></app-tafuta-form>
     <div class="main-card">
         <div *ngFor="let gitsearch of gitsearches">
             <div class="row">
@@ -86,4 +85,10 @@
 
         </div>
     </div>
+</div>
+
+<div *ngFor="let gitrepo of gitrepos">
+    <p>{{gitrepo.name}}</p>
+    <p>{{gitrepo.html_url}}</p>
+    <p>{{gitrepo.description}}</p>
 </div>
