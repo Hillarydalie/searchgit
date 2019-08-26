@@ -100,7 +100,8 @@
                     <p>{{gitrepo.description}}</p>
                 </div>
                 <div class="col-md-3">
-                    <p>{{gitrepo.created_at}}</p>
+                    <p>{{gitrepo.created_at|datecount}} days ago.</p>
+                    <p>{{gitrepo.created_at | date|uppercase}}</p>
                 </div>
                 <div class="col-md-3">
                     <p>{{gitrepo.language}}</p>
